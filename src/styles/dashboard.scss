@@ -1,0 +1,31 @@
+@mixin flex-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-element {
+    display: flex;
+
+    .left-card {
+        width: 25%;
+        @include flex-item;
+    }
+
+    .right-card {
+        width: 75%;
+        padding: 0 3rem 3rem 3rem;
+        background-color: #f8f6f6;
+        @include flex-item;
+
+        p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-left: 10%;
+            margin-top: 1.4rem;
+        }
+    }
+
+    .p-card-content {
+        padding: 0;
+    }
+}

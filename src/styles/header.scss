@@ -1,0 +1,50 @@
+@mixin flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 1.5rem 0rem;
+}
+
+.header-component {
+    display: flex;
+    position: relative;
+
+    .left-card {
+        width: 25%;
+        @include flex-item;
+
+        .input-element {
+            width: auto;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    .right-card {
+        width: 75%;
+        align-items: center;
+        background-color: #f8f6f6;
+        @include flex-item;
+        flex-direction: row;
+        justify-content: space-around;
+
+        a,
+        .p-tabview-panels {
+            background-color: #f8f6f6;
+        }
+
+        .p-tabview-panels {
+            display: none;
+        }
+
+        span {
+            display: flex;
+            flex-direction: row;
+        }
+
+        span:nth-child(2) {
+            align-items: baseline;
+            gap: 3rem;
+        }
+    }
+}

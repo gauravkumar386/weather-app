@@ -1,0 +1,6 @@
+export const API_KEY = "ceef2665a1fac8c75364db2c7bb8aaf2"
+export const CITY_DATA_API = "http://api.openweathermap.org/geo/1.0/direct"
+export const WEATHER_DATA_API = "https://api.openweathermap.org/data/2.5/weather"
+export const WEEKLY_DATA_API = "https://api.openweathermap.org/data/2.5/forecast"
+export const AIR_DATA_API = "https://api.openweathermap.org/data/2.5/air_pollution"
+export const API_KEY1 = "rEKhaYoPwC8QZfFG0qJ8FCxy3pJRFRjk"

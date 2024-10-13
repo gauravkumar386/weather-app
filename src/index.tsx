@@ -3,13 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { applyMiddleware, createStore, Store } from 'redux';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { thunk } from 'redux-thunk';
+import { Provider } from 'react-redux';
+import reducer from './redux/reducer';
+
+const store:Store<InitialState, ReduxAction> & {
+  dispatch: DispatchType
+} = createStore(reducer, applyMiddleware(thunk))
+export type IRootState = ReturnType<typeof store.getState>
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </Provider>
   </React.StrictMode>
 );
 
